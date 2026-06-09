@@ -1,0 +1,52 @@
+{
+  "vault": {
+    "path": "./.amm-treasury/vault.enc"
+  },
+  "store": {
+    "path": "./treasury/.data/treasury.db"
+  },
+  "pool": "REPLACE_ME_WITH_PUMP_AMM_POOL_OR_TOKEN_MINT",
+  "wallets": {
+    "creator": "creator-1",
+    "buybackHot": "buyback-hot-1",
+    "claimPayer": null,
+    "treasury": "REPLACE_ME_WITH_TREASURY_PUBKEY_OR_VAULT_LABEL",
+    "miningTreasury": "REPLACE_ME_WITH_MINING_TREASURY_PUBKEY_OR_VAULT_LABEL"
+  },
+  "split": {
+    "treasuryBps": 3000,
+    "minSplitLamports": 10000000,
+    "creatorRentReserveLamports": 5000000,
+    "bucketEnabled": true
+  },
+  "claim": {
+    "thresholdLamports": 50000000,
+    "intervalMs": 3600000,
+    "manualOnly": false
+  },
+  "buyback": {
+    "venue": "jupiter",
+    "dipReferenceWindowSec": 14400,
+    "tiers": [
+      { "drawdownPct": 0.05, "trancheSol": 0.25, "cooldownMs": 1800000 },
+      { "drawdownPct": 0.1, "trancheSol": 0.5, "cooldownMs": 1800000 },
+      { "drawdownPct": 0.2, "trancheSol": 1.0, "cooldownMs": 3600000 }
+    ],
+    "slippageBps": 150,
+    "slippageJitter": 0.2,
+    "useJito": true,
+    "computeUnitLimit": 600000,
+    "bucketRentReserveLamports": 12000000
+  },
+  "loop": {
+    "pollIntervalMs": 60000,
+    "dryRun": true,
+    "skipBuybacks": false
+  },
+  "web": {
+    "enabled": true,
+    "host": "127.0.0.1",
+    "port": 4318,
+    "readOnly": false
+  }
+}

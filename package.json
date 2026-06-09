@@ -1,0 +1,37 @@
+{
+  "name": "@amm/treasury",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/cli.js",
+  "bin": {
+    "treasury": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "start": "node --import tsx/esm src/cli.ts",
+    "dev": "tsc -p tsconfig.json --watch"
+  },
+  "dependencies": {
+    "@amm/core": "workspace:*",
+    "@amm/shared": "workspace:*",
+    "@amm/venues": "workspace:*",
+    "@inquirer/prompts": "^7.0.0",
+    "@solana/spl-token": "^0.4.9",
+    "@solana/web3.js": "^1.98.2",
+    "better-sqlite3": "^11.5.0",
+    "bn.js": "^5.2.2",
+    "bs58": "^6.0.0",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/bn.js": "^5.1.6",
+    "@types/node": "^22.7.4",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  }
+}
